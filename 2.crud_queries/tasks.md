@@ -1,31 +1,44 @@
 1. Create a database named `blog`.
 
+   ```
+   use blog
+   ```
+
 2. Create a collection called 'articles'.
+
+```
+db.createCollection('articles')
+```
 
 3. Insert multiple documents(at least 3) into articles. It should have fields
 
+```
+db.articles.insertMany([{title:'hacko bill',author:'px'},{title:'tandak',author:'shiva'},{title:'the veera',author:'sunny'}])
+```
+
 4. Find all the articles using `db.COLLECTION_NAME.find()`
 
-5. Find a document using _id field.
+5. Find a document using \_id field.
 
 6. Find documents using title and author's name field.
 
 7. Find document using a specific tag.
 
-8. Update title of a document using its _id field.
+8. Update title of a document using its \_id field.
 
 9. Update a author's name using article's title.
 
-10. rename details field to description from articles collection. 
+10. rename details field to description from articles collection.
 
 11. Add additional tag in a specific document.
 
 12. Update an article's tags using $set and without $set.
-  - Write the differences here ?
 
-13. Increment an auhtor's age by 5.  
+- Write the differences here ?
 
-14. Delete a document using _id field with `db.COLLECTION_NAME.remove()`.
+13. Increment an auhtor's age by 5.
+
+14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
 
 Use sample.js data for below queries.
 
