@@ -18,11 +18,27 @@ db.articles.insertMany([{title:'hacko bill',author:'px'},{title:'tandak',author:
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
 
+```
+db.articles.find()
+```
+
 5. Find a document using \_id field.
+
+```
+db.articles.find({"_id" : ObjectId("5d5ac954475a1238f0abcb87")})
+```
 
 6. Find documents using title and author's name field.
 
+```
+  db.articles.find({"title" : "hacko bill", "author" : "px" })
+```
+
 7. Find document using a specific tag.
+
+```
+  db.articles.find({"title"})
+```
 
 8. Update title of a document using its \_id field.
 
