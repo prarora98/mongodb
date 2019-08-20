@@ -13,7 +13,7 @@ db.createCollection('articles')
 3. Insert multiple documents(at least 3) into articles. It should have fields
 
 ```
-db.articles.insertMany([{title:'hacko bill',author:'px'},{title:'tandak',author:'shiva'},{title:'the veera',author:'sunny'}])
+db.articles.insertMany([{title:'hacko bill',author:'px',tags:['romance','crime']},{title:'tandak',author:'shiva',tags:['drama','horror']},{title:'the veera',author:'sunny',tags:['Political','si-fi']}])
 ```
 
 4. Find all the articles using `db.COLLECTION_NAME.find()`
@@ -37,12 +37,22 @@ db.articles.find({"_id" : ObjectId("5d5ac954475a1238f0abcb87")})
 7. Find document using a specific tag.
 
 ```
-  db.articles.find({"title"})
+  db.articles.find({tags:'crime'})
+
 ```
 
 8. Update title of a document using its \_id field.
 
+```
+db.articles.update({"_id" : ObjectId("5d5be8249a0ca6f9135894e4")},{$set:{title:'hero'}})
+
+```
+
 9. Update a author's name using article's title.
+
+```
+  db.articles.update({"title" : "hero"},{$set:{author:'salman'}})
+```
 
 10. rename details field to description from articles collection.
 
