@@ -56,15 +56,40 @@ db.articles.update({"_id" : ObjectId("5d5be8249a0ca6f9135894e4")},{$set:{title:'
 
 10. rename details field to description from articles collection.
 
+```
+  db.articles.updateMany({},{$rename:{'author':'writter'}})
+  //remane author to writter
+```
+
 11. Add additional tag in a specific document.
+
+```
+  db.articles.update({tags:'crime'},{$set:{rating:4.7}})
+```
 
 12. Update an article's tags using $set and without $set.
 
 - Write the differences here ?
 
+```
+  without using set the inserted data replace the new data with the old one.
+  but set just update the data on the old data.
+```
+
 13. Increment an auhtor's age by 5.
 
+```
+  db.articles.update(
+   { author: "abc" },
+   { $inc: { age: 5}
+)
+```
+
 14. Delete a document using \_id field with `db.COLLECTION_NAME.remove()`.
+
+```
+  db.articles.remove({ "_id" : ObjectId("5d5be8249a0ca6f9135894e3"), "rating" : 4.7 })
+```
 
 Use sample.js data for below queries.
 
